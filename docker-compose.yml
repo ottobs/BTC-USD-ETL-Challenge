@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  postgres:
+  postgres-market-data-btcusd:
     image: postgres:latest
     volumes:
       - db-data:/var/lib/postgresql/data
@@ -10,17 +10,17 @@ services:
       POSTGRES_USER: postgres_user
       POSTGRES_PASSWORD: postgres_password
       POSTGRES_DB: postgres_database
-    container_name: postgres
+    container_name: postgres-market-data-btcusd
     ports:
       - "5432:5432"
       
-  python-app:
+  python-app-market-data-btcusd:
     build: ./app/
     volumes:
       - ./app:/app
     depends_on:
-      - postgres
-    container_name: python-app
+      - postgres-market-data-btcusd
+    container_name: python-app-market-data-btcusd
 
 
 volumes:
