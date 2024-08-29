@@ -35,7 +35,7 @@ def main():
 
 
     send_data(connection_url=CONNECTION_URL, schema_name=SCHEMA_NAME, table_name=TABLE_NAME, df=df_pandas)
-    print(f"Data sample: {df_pandas.tail()}")
+    print(f"Data sample:\n {df_pandas.tail()}")
     logger.info("ETL process completed successfully.\n")
 
 if __name__ == "__main__":
